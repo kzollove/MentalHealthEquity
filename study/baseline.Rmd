@@ -168,21 +168,21 @@ To maintain patient privacy and security, we will follow HITECH standards to fil
 ##### Bipolar Disorder
 
 ```{r, eval = F}
-bipolar_patients <- bipolar_patients %>%
+bipolar_final_df <- bipolar_patients %>%
   filter(COUNTS > 10)
 ```
 
 ##### Depression
 
 ```{r, eval = F}
-depression_patients <- depression_patients %>%
+depression_final_df <- depression_patients %>%
   filter(COUNTS > 10)
 ```
 
 ##### Suicidality
 
 ```{r, eval = F}
-suicidality_patients <- suicidality_patients %>%
+suicidality_final_df <- suicidality_patients %>%
   filter(COUNTS > 10)
 ```
 
@@ -193,7 +193,7 @@ Here we now finally save this data to the `data` directory in the root of the st
 ```{r, eval = F}
 exportFolder <- "../data/baseline"
 
-write.csv(bipolar_patients, 
+write.csv(bipolar_final_df, 
           file = file.path(exportFolder, "bipolar_person_stratified_breakdown.csv"), 
           row.names = FALSE)
 
